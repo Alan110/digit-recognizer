@@ -2,22 +2,78 @@
 <html>
 
 <head>
+  <style>
+    #run,
+    #testView,
+    #trainParam,
+    #testParam{
+      display: none;
+    }
+    #trainRange,
+    #testRange{
+      width: 300px;
+    }
 
-  <title>Document</title>
+    #trainNum,
+    #testNum{
+      font-weight: 600;
+    }
+
+    #testView{
+      margin-top: 10px;
+    }
+
+    .range-bar{
+      display: flex;
+      align-items: center;
+      padding: 5px 0;
+    }
+  </style>
+  <title>Digit Recognizer</title>
 </head>
 
 <body>
-  model : <input id="model" type="file"><br>
+  <!-- model : <input id="model" type="file"><br>
   model-weight : <input id="model-weight" type="file"><br>
   ----------------------------------------------------------<br>
-  train : <input id="train" type="file"><br>
-  test : <input id="test" type="file"><br>
 
-  <br>
+  <br> -->
+  <span id="load"></span>
 
-  <button id="btn">Train</button><br>
-  <button id="btn2">Train2</button>
-  <script src="./index.js"></script>
+  <div id="run">
+    <br>
+    <br>
+    --Parameter-------------------------------------------------------------<br>
+    <br>
+    <div id="trainParam">
+      --Train----------------------<br>
+      Number of train dataset : <span id="trainNum">1000</span><br>
+      <div class="range-bar">
+        0&emsp;<input id="trainRange" type="range" min="0" max="42000" value="1000" />&emsp;42000
+      </div>
+      <button id="train">Train</button>&emsp;<span id="trainMessage"></span><br><br>
+    </div>
+    <div id="testParam">
+      --Test----------------------<br>
+      Number of test dataset : <span id="testNum">10</span><br>
+      <div class="range-bar">
+        0&emsp;<input id="testRange" type="range" min="0" max="28000" value="10" />&emsp;28000
+      </div>
+      <button id="test">Test and download csv</button>&emsp;<span id="testMessage"></span><br><br>
+      --Single Test----------------------<br>
+      Test image ID :
+      <input id="testId" type="number" placeholder="id for 1 to 28000" value="1">
+      <button id="imgView">View</button>&emsp;<span id="viewMessage"></span><br>
+      <div id="testView">
+        <canvas id="testImg" width="280" height="280"></canvas><br>
+        Label : <span id="testImgLabel"></span>
+      </div><br>
+    </div>
+    -------------------------------------------------------------------------<br>
+  </div>
+
+
+  <script src="index.js"></script>
 </body>
 
 </html>
