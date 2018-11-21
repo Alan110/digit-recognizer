@@ -15,8 +15,8 @@
     "plotly.js-dist": "^1.39.4"
   },
   "scripts": {
-    "watch": "cross-env NODE_ENV=development parcel index.html --no-hmr --open --out-dir ./docs",
-    "build": "cross-env NODE_ENV=production parcel build index.html --no-minify --public-url ./",
+    "watch": "cross-env NODE_ENV=development parcel index.html --no-hmr --open",
+    "build": "cross-env NODE_ENV=production parcel build index.html --no-minify --out-dir ./docs --public-url ./digit-recognizer/",
     "link-local": "yalc link",
     "postinstall": "yarn upgrade --pattern @tensorflow"
   },
