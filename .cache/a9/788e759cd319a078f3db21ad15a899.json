@@ -1,1 +1,0 @@
-{"id":"data/train.csv","dependencies":[{"name":"D:\\AI\\digit-recognizer\\.babelrc","includedInParent":true,"mtime":1539833811340},{"name":"D:\\AI\\digit-recognizer\\package.json","includedInParent":true,"mtime":1542718899443}],"generated":{"js":"module.exports = \"/9221de561e10bc140c22058f24e02c13.csv\";"},"hash":"4003867bbac45a20a3367753b6a42e81","cacheData":{"env":{}}}
