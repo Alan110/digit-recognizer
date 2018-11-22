@@ -3,9 +3,10 @@
 
 <head>
   <style>#run,
-    #testView,
-    #trainParam,
-    #testParam{
+    #trainDiv,
+    #testDiv,
+    #viewDiv,
+    #testView{
       display: none;
     }
     #trainRange,
@@ -13,61 +14,66 @@
       width: 300px;
     }
 
-    #trainNum,
-    #testNum{
-      font-weight: 600;
-    }
-
-    #testView{
-      margin-top: 10px;
-    }
-
-    .range-bar{
-      display: flex;
-      align-items: center;
-      padding: 5px 0;
+    #testIdInput{
+      width: 200px;
     }</style>
   <title>Digit Recognizer</title>
-</head>
+<link rel="stylesheet" href="digit-recognizer.42dde872.css"></head>
 
-<body>
+<body class="p-3">
 
-  <span id="load"></span>
+  <div class="container">
+    <span id="load"></span>
 
-  <div id="run">
-    <br>
-    <br>
-    --Parameter-------------------------------------------------------------<br>
-    <br>
-    <div id="trainParam">
-      --Train----------------------<br>
-      Number of train dataset : <span id="trainNum">1000</span><br>
-      <div class="range-bar">
-        0&emsp;<input id="trainRange" type="range" min="0" max="42000" value="1000">&emsp;42000
+    <div class="mt-4" id="run">
+      <div class="card" id="trainDiv">
+        <div class="card-body">
+          <h5 class="card-title">Train</h5>
+          Number of train dataset : <span class="font-weight-bold" id="trainNum">1000</span>
+          <div class="d-flex align-items-center py-1">
+            <span class="badge badge-secondary">0</span>&nbsp;
+            <input id="trainRange" type="range" min="0" max="42000" value="1000">&nbsp;
+            <span class="badge badge-secondary">42000</span>
+          </div>
+          <div class="mt-2">
+            <button class="btn btn-primary btn-sm" id="train">Train</button>&emsp;<span id="trainMessage"></span>
+          </div>
+        </div>
       </div>
-      <button id="train">Train</button>&emsp;<span id="trainMessage"></span><br><br>
-    </div>
-    <div id="testParam">
-      --Test----------------------<br>
-      Number of test dataset : <span id="testNum">10</span><br>
-      <div class="range-bar">
-        0&emsp;<input id="testRange" type="range" min="0" max="28000" value="10">&emsp;28000
+      <div class="card mt-2" id="testDiv">
+        <div class="card-body">
+          <h5 class="card-title">Test</h5>
+          Number of test dataset : <span class="font-weight-bold" id="testNum">10</span>
+          <div class="d-flex align-items-center py-1">
+            <span class="badge badge-secondary">0</span>&nbsp;
+            <input id="testRange" type="range" min="0" max="28000" value="10">&nbsp;
+            <span class="badge badge-secondary">28000</span>
+          </div>
+          <div class="mt-2">
+            <button class="btn btn-primary btn-sm" id="test">Test and download csv</button>&emsp;<span id="testMessage"></span>
+          </div>
+        </div>
       </div>
-      <button id="test">Test and download csv</button>&emsp;<span id="testMessage"></span><br><br>
-      --Single Test----------------------<br>
-      Test image ID :
-      <input id="testId" type="number" placeholder="id for 1 to 28000" value="1">
-      <button id="imgView">View</button>&emsp;<span id="viewMessage"></span><br>
-      <div id="testView">
-        <canvas id="testImg" width="280" height="280"></canvas><br>
-        Label : <span id="testImgLabel"></span>
-      </div><br>
+      <div class="card mt-2" id="viewDiv">
+        <div class="card-body">
+          <h5 class="card-title">Single Test</h5>
+          Test image ID : <span class="font-weight-bold" id="testId">?</span>
+          <input class="form-control mt-1" id="testIdInput" type="number" placeholder="id for 1 to 28000" value="1">
+          <div class="mt-2">
+            <button class="btn btn-primary btn-sm" id="imgView">View</button>&emsp;<span id="viewMessage"></span>
+          </div>
+          <div class="mt-2" id="testView">
+            <canvas id="testImg" width="280" height="280"></canvas><br>
+            Label : <span id="testImgLabel"></span>
+          </div>
+        </div>
+      </div>
     </div>
-    -------------------------------------------------------------------------<br>
+
   </div>
 
 
-  <script src="digit-recognizer.59486a38.js"></script>
+  <script src="digit-recognizer.958cc279.js"></script>
 </body>
 
 </html>

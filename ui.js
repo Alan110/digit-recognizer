@@ -3,15 +3,15 @@ import { IMAGE_H, IMAGE_W, Data } from './data';
 import { testOne } from "./index"
 
 export function loading() {
-  console.log("loading...");
-  $("#load").html("loading...");
+  console.log("Loading...");
+  $("#load").html("Loading...");
 }
 
 export function loadingCompleted() {
-  console.log("loading completed!");
-  $("#load").html("loading completed!");
+  console.log("Loading completed!");
+  $("#load").html("Loading completed!");
   $("#run").show();
-  $("#trainParam").show();
+  $("#trainDiv").show();
   $("#trainRange").on('change', () => {
     $("#trainNum").html($("#trainRange").val());
   });
@@ -34,9 +34,11 @@ function drawPicture(orgs) {
 }
 
 export function trainCompleted() {
-  $("#testParam").show();
+  $("#testDiv").show();
+  $("#viewDiv").show();
   $("#imgView").on('click', () => {
-    let id = parseInt($("#testId").val());
+    let id = parseInt($("#testIdInput").val());
+    $("#testId").html(id);
     let singleData = Data.getSingleTestData(id);
     $("#testView").show();
     let val = testOne(singleData.xs);

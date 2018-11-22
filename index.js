@@ -1,8 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import * as tf from '@tensorflow/tfjs'
-import { IMAGE_H, IMAGE_W, Data } from './data';
+import { IMAGE_H, IMAGE_W, Data } from './data'
 import $ from "jquery"
-import CSV from 'comma-separated-values';
+import CSV from 'comma-separated-values'
 import * as ui from "./ui"
+
 
 
 function createConvModel() {
