@@ -4,14 +4,19 @@ import { testOne } from "./index"
 
 export function loading() {
   console.log("Loading...");
-  $("#load").html("Loading...");
+  $("#load").html(`
+    Loading...<br>
+    train.csv 73.22MB<br>
+    test.csv 48.75MB<br>
+    Large data, please wait a moment.
+  `);
 }
 
 export function loadingCompleted() {
   console.log("Loading completed!");
   $("#load").html("Loading completed!");
-  $("#run").show();
-  $("#trainDiv").show();
+  $("#trainRange").attr("disabled",false);
+  $("#train").attr("disabled",false);
   $("#trainRange").on('change', () => {
     $("#trainNum").html($("#trainRange").val());
   });
@@ -34,8 +39,10 @@ function drawPicture(orgs) {
 }
 
 export function trainCompleted() {
-  $("#testDiv").show();
-  $("#viewDiv").show();
+  $("#testRange").attr("disabled",false);
+  $("#test").attr("disabled",false);
+  $("#testIdInput").attr("disabled",false);
+  $("#imgView").attr("disabled",false);
   $("#imgView").on('click', () => {
     let id = parseInt($("#testIdInput").val());
     $("#testId").html(id);

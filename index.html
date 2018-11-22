@@ -3,13 +3,10 @@
 
 <head>
   <style>
-    #run,
-    #trainDiv,
-    #testDiv,
-    #viewDiv,
     #testView{
       display: none;
     }
+
     #trainRange,
     #testRange{
       width: 300px;
@@ -26,43 +23,43 @@
 
   <div class="container">
     <span id="load"></span>
-
-    <div class="mt-4" id="run">
-      <div class="card" id="trainDiv">
+    <div class="mt-4">
+      <div class="card">
         <div class="card-body">
           <h5 class="card-title">Train</h5>
           Number of train dataset : <span class="font-weight-bold" id="trainNum">1000</span>
           <div class="d-flex align-items-center py-1">
             <span class="badge badge-secondary">0</span>&nbsp;
-            <input id="trainRange" type="range" min="0" max="42000" value="1000" />&nbsp;
+            <input id="trainRange" type="range" min="0" max="42000" value="1000" disabled />&nbsp;
             <span class="badge badge-secondary">42000</span>
           </div>
           <div class=mt-2>
-            <button class="btn btn-primary btn-sm" id="train">Train</button>&emsp;<span id="trainMessage"></span>
+            <button class="btn btn-primary btn-sm" id="train" disabled>Train</button>&emsp;<span id="trainMessage"></span>
           </div>
         </div>
       </div>
-      <div class="card mt-2" id="testDiv">
+      <div class="card mt-2">
         <div class="card-body">
           <h5 class="card-title">Test</h5>
           Number of test dataset : <span class="font-weight-bold" id="testNum">10</span>
           <div class="d-flex align-items-center py-1">
             <span class="badge badge-secondary">0</span>&nbsp;
-            <input id="testRange" type="range" min="0" max="28000" value="10" />&nbsp;
+            <input id="testRange" type="range" min="0" max="28000" value="10" disabled />&nbsp;
             <span class="badge badge-secondary">28000</span>
           </div>
           <div class=mt-2>
-            <button class="btn btn-primary btn-sm" id="test">Test and download csv</button>&emsp;<span id="testMessage"></span>
+            <button class="btn btn-primary btn-sm" id="test" disabled>Test and download csv</button>&emsp;<span id="testMessage"></span>
           </div>
         </div>
       </div>
-      <div class="card mt-2" id="viewDiv">
+      <div class="card mt-2">
         <div class="card-body">
           <h5 class="card-title">Single Test</h5>
           Test image ID : <span class="font-weight-bold" id="testId">?</span>
-          <input class="form-control mt-1" id="testIdInput" type="number" placeholder="id for 1 to 28000" value="1">
+          <input class="form-control mt-1" id="testIdInput" type="number" placeholder="id for 1 to 28000" value="1"
+            disabled>
           <div class=mt-2>
-            <button class="btn btn-primary btn-sm" id="imgView">View</button>&emsp;<span id="viewMessage"></span>
+            <button class="btn btn-primary btn-sm" id="imgView" disabled>View</button>&emsp;<span id="viewMessage"></span>
           </div>
           <div class="mt-2" id="testView">
             <canvas id="testImg" width="280" height="280"></canvas><br>
@@ -71,9 +68,7 @@
         </div>
       </div>
     </div>
-
   </div>
-
 
   <script src="index.js"></script>
 </body>
